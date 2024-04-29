@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Push the Docker image to the repository using credentials
-                    docker.withRegistry('index.docker.io/sanjaymatta36/weather-app:latest') {
+                    docker.withRegistry('https://index.docker.io/sanjaymatta36/weather-app:latest') {
                         docker.image(DOCKER_IMAGE).push()
                     }
                 }
