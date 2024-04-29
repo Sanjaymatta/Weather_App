@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     
@@ -25,17 +24,16 @@ pipeline {
         }
         
         stage('Deploy') {
-    steps {
-        // Push the Docker image to the registry
-        sh "docker push $DOCKER_IMAGE"
-        
-        // SSH into your production server and deploy the Docker container
-        // For example:
-        // ssh user@production-server 'docker pull $DOCKER_IMAGE && docker stop container_name && docker rm container_name && docker run -d -p 80:80 --name container_name $DOCKER_IMAGE'
+            steps {
+                // Push the Docker image to the registry
+                sh "docker push $DOCKER_IMAGE"
+                
+                // SSH into your production server and deploy the Docker container
+                // For example:
+                // ssh user@production-server 'docker pull $DOCKER_IMAGE && docker stop container_name && docker rm container_name && docker run -d -p 80:80 --name container_name $DOCKER_IMAGE'
+            }
+        }
     }
-}
-
-
     
     post {
         success {
