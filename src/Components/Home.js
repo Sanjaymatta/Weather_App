@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 import './Home.css';
 import { FaTemperatureArrowDown } from "react-icons/fa6";
 import { FaTemperatureArrowUp } from "react-icons/fa6";
