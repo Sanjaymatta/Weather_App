@@ -15,14 +15,6 @@ pipeline {
             }
         }
         
-        stage('Test') {
-            steps {
-                // Add your test commands or scripts here
-                // For example:
-                // sh 'npm test'
-            }
-        }
-        
         stage('Deploy') {
             steps {
                 // Push the Docker image to the registry
