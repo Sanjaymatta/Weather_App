@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Push the Docker image to the repository using credentials
-                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
+                    docker.withRegistry('https://index.docker.io/v2/', DOCKER_CREDENTIALS) {
                         docker.image(DOCKER_IMAGE).push()
                     }
                 }
