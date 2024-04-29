@@ -18,17 +18,16 @@ pipeline {
         
         
         stage('Deploy') {
-            steps {
-                // Push the Docker image to the registry
-                bat "docker push %DOCKER_IMAGE%"
-                
-                // This section is commented out as it's not relevant for a Windows environment
-                // You can include appropriate deployment steps for your Windows environment here
-                
-                // Example:
-                // bat 'winpty ssh user@production-server "docker pull %DOCKER_IMAGE% && docker stop container_name && docker rm container_name && docker run -d -p 80:80 --name container_name %DOCKER_IMAGE%"'
+    steps {
+        script {
+            // Push the Docker image to the repository
+            docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-token') {
+                docker.image('sanjaymatta36/weather-app:latest').push()
             }
         }
+    }
+}
+
     }
     
     post {
