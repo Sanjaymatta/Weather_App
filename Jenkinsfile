@@ -3,6 +3,7 @@ pipeline {
     
     environment {
         DOCKER_IMAGE = 'sanjaymatta36/weather-app:latest'
+        DOCKER_CREDENTIALS = credentials('dckr_pat_OMvxpBupj5ZGon7Ag7dGeYJUYjA')
     }
     
     stages {
@@ -15,19 +16,16 @@ pipeline {
             }
         }
         
-        
-        
         stage('Deploy') {
-    steps {
-        script {
-            // Push the Docker image to the repository
-            docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-token') {
-                docker.image('sanjaymatta36/weather-app:latest').push()
+            steps {
+                script {
+                    // Push the Docker image to the repository using credentials
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
+                        docker.image(DOCKER_IMAGE).push()
+                    }
+                }
             }
         }
-    }
-}
-
     }
     
     post {
