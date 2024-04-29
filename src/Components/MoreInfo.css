@@ -1,0 +1,86 @@
+#wind{
+    height: 15vh;
+    width: 10vw;
+    background-image: linear-gradient(68deg,rgb(129, 129, 234) 0%, whitesmoke 100%);
+    background-size: 100% 100%;
+}
+#wind:hover{
+    height :20vh;
+    width: 15vw;
+    background-image: linear-gradient(68deg,rgb(77, 77, 199) 0%, whitesmoke 100%);
+}
+#cloudiness{
+    height: 15vh;
+    width: 10vw;
+    background-image: linear-gradient(120deg, rgb(243, 239, 239) 0%,rgb(88, 87, 87) 50%);
+    background-size: 100% 100%;
+}
+#cloudiness:hover{
+    height :20vh;
+    width: 15vw;
+    background-image: linear-gradient(120deg, rgb(243, 239, 239) 0%,rgb(92, 87, 87) 50%);
+}
+#rain{
+    height: 15vh;
+    width: 10vw;
+    background-image: linear-gradient(68deg,lightblue 0%, whitesmoke 100%);
+    background-size: 100% 100%;
+}
+#rain:hover{
+    height :20vh;
+    width: 15vw;
+    background-image: linear-gradient(68deg,rgb(53, 102, 119) 0%, whitesmoke 100%);
+   
+}
+#sealevel{
+    height: 15vh;
+    width: 10vw;
+    background-image: linear-gradient(68deg,rgb(7, 107, 153) 0%,whitesmoke 100%);
+}
+#sea_img{
+     height: 40%;
+     width: 40%;  
+}
+#sealevel:hover{
+    height :20vh;
+    width: 15vw;
+    background-image: linear-gradient(68deg,rgb(9, 66, 93) 0%,whitesmoke 100%);
+ 
+}
+#grdlevel{
+    height: 15vh;
+    width: 10vw;
+    background-image: linear-gradient(68deg,rgb(113, 176, 113) 0%,rgb(164, 47, 47) 100%);
+}
+
+#grdlevel:hover{
+    height :20vh;
+    width: 15vw;
+    background-image: linear-gradient(68deg,rgb(56, 176, 56) 0%,rgb(164, 47, 47) 100%);
+ 
+}
+#temp{
+    height :15vh;
+    width: 10vw;
+    background-image: url('https://media.istockphoto.com/photos/heat-wave-of-extreme-sun-and-sky-background-hot-weather-with-global-picture-id1150860710?k=6&m=1150860710&s=170667a&w=0&h=CTpFfv3RokNg8d4z5LKMmQi_ZnacDZnSteOb8gz0J3U=');
+    background-size: cover;
+}
+#temp:hover{
+    height :20vh;
+    width: 15vw;
+    background-image: url('https://media.istockphoto.com/photos/heat-wave-of-extreme-sun-and-sky-background-hot-weather-with-global-picture-id1150860710?k=6&m=1150860710&s=170667a&w=0&h=CTpFfv3RokNg8d4z5LKMmQi_ZnacDZnSteOb8gz0J3U=');
+    background-size: cover;
+}
+.center-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100%;  
+}
+.con{
+    background-image: url("https://getwallpapers.com/wallpaper/full/2/1/c/1172871-cold-weather-wallpaper-1920x1080-samsung-galaxy.jpg");
+    height: 100vh;
+    width:auto;
+    
+    background-size:cover;
+}

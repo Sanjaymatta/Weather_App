@@ -1,0 +1,40 @@
+.background-image{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#form{
+    display: flex;
+    width: fit-content;
+    
+}
+img{
+    height: 15px;
+}
+#con{
+    height: 100vh;
+ 
+}
+p{
+    color: black
+}
+#humidity{
+   background-image: url('https://goblueox.com/wp-content/uploads/2019/08/1-1-1024x594.jpg');
+   background-size: cover;   
+}
+#windSpeed{
+    background-image: url('http://ak5.picdn.net/shutterstock/videos/16278475/thumb/1.jpg');
+    background-size: cover; 
+}
+#maxTemp{
+    background-image: url('https://media.istockphoto.com/photos/heat-wave-of-extreme-sun-and-sky-background-hot-weather-with-global-picture-id1150860710?k=6&m=1150860710&s=170667a&w=0&h=CTpFfv3RokNg8d4z5LKMmQi_ZnacDZnSteOb8gz0J3U=');
+    background-size: cover; 
+}
+#minTemp{
+    background-image: url('https://media.istockphoto.com/photos/heat-wave-of-extreme-sun-and-sky-background-hot-weather-with-global-picture-id1150860710?k=6&m=1150860710&s=170667a&w=0&h=CTpFfv3RokNg8d4z5LKMmQi_ZnacDZnSteOb8gz0J3U=');
+    background-size: cover; 
+}
+
+
