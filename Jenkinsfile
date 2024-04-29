@@ -10,21 +10,23 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image for the React application
-                    sh "docker build -t $DOCKER_IMAGE ."
+                    bat "docker build -t %DOCKER_IMAGE% ."
                 }
             }
         }
         
+        
+        
         stage('Deploy') {
             steps {
                 // Push the Docker image to the registry
-                sh "docker push $DOCKER_IMAGE"
+                bat "docker push %DOCKER_IMAGE%"
                 
                 // This section is commented out as it's not relevant for a Windows environment
                 // You can include appropriate deployment steps for your Windows environment here
                 
                 // Example:
-                // sh 'winpty ssh user@production-server "docker pull $DOCKER_IMAGE && docker stop container_name && docker rm container_name && docker run -d -p 80:80 --name container_name $DOCKER_IMAGE"'
+                // bat 'winpty ssh user@production-server "docker pull %DOCKER_IMAGE% && docker stop container_name && docker rm container_name && docker run -d -p 80:80 --name container_name %DOCKER_IMAGE%"'
             }
         }
     }
