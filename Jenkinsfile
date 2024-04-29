@@ -2,16 +2,18 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_IMAGE = 'sanjaymatta36/weather-app:latest'
-       
+        DOCKER_IMAGE = 'weather-app:latest' // Use the existing image name
     }
     
     stages {
         stage('Build') {
             steps {
                 script {
-                    // Build the Docker image for the React application
-                    bat "docker build -t %DOCKER_IMAGE% ."
+                    // Pull the latest changes from the repository
+                    git 'https://github.com/Sanjaymatta/Weather_App.git'
+                    
+                    // Build the Docker image
+                    bat "docker build -t ${DOCKER_IMAGE} ."
                 }
             }
         }
@@ -19,10 +21,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Push the Docker image to the repository using credentials
-                    docker.withRegistry('https://index.docker.io/sanjaymatta36/weather-app:latest') {
-                        docker.image(DOCKER_IMAGE).push()
-                    }
+                    // Push the Docker image to a registry or deploy it to a server
+                    // Since you already have the image, you might push it to a registry or deploy it to your server
+                    // Example: docker push ${DOCKER_IMAGE} or deploy to a server using SSH, Kubernetes, etc.
+                    echo "Deploying Docker image: ${DOCKER_IMAGE}"
                 }
             }
         }
