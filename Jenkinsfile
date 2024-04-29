@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DOCKER_IMAGE = 'sanjaymatta36/weather-app:latest'
-        DOCKER_CREDENTIALS = credentials('dckr_pat_OMvxpBupj5ZGon7Ag7dGeYJUYjA')
+        DOCKER_CREDENTIALS = credentials('dckr_pat_r_DkHSX2SPVPZ6i3Z5JYSWe2zvY')
     }
     
     stages {
