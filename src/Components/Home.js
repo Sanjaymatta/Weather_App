@@ -82,7 +82,7 @@ function Home() {
               
   return(
     
-    <div className="background-image" style={{backgroundImage:imgurl? `url(${imgurl})`:'linear-gradient(90deg, pink, yellow)'}}>
+    <div className="background-image" style={{backgroundImage:imgurl? `url(${imgurl})`:'linear-gradient(90deg, red, yellow)'}}>
      <div className="container" id="con">
           <div className="row">
             <center>
