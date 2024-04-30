@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = 'weather-app:latest' // Use the existing image name
     }
     triggers {
-        pollSCM('*/4 * * * *') 
+        pollSCM('*/1 * * * *') 
     }
     stages {
         stage('Build') {
