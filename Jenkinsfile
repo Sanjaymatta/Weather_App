@@ -2,19 +2,16 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_IMAGE = 'weather-app:latest' // Use the existing image name
+        DOCKER_IMAGE = 'weather-app:latest' 
     }
     triggers {
-        pollSCM('*/1 * * * *') 
+        pollSCM('*/4 * * * *') 
     }
     stages {
         stage('Build') {
             steps {
                 script {
-                    // Pull the latest changes from the repository
                     git 'https://github.com/Sanjaymatta/Weather_App.git'
-                    
-                    // Build the Docker image
                     bat "docker build -t ${DOCKER_IMAGE} ."
                 }
             }
@@ -23,11 +20,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Push the Docker image to a registry or deploy it to a server
-                    // Since you already have the image, you might push it to a registry or deploy it to your server
-                    // Example: docker push ${DOCKER_IMAGE} or deploy to a server using SSH, Kubernetes, etc.
                     echo "Deploying Docker image: ${DOCKER_IMAGE}"
-                    bat "docker run -d --name weather-app-2 -p 8000:8001 ${DOCKER_IMAGE}"
+                    // Check if the container already exists and stop/remove it
+                    bat "docker ps -a | grep weather-app-1 && docker stop weather-app-1 && docker rm weather-app-1 || true"
+                    // Create a new container
+                    bat "docker run -d --name weather-app-1 -p 8000:8000 ${DOCKER_IMAGE}"
                 }
             }
         }
@@ -35,11 +32,9 @@ pipeline {
     
     post {
         success {
-            // Send success notification
             echo 'Deployment successful!'
         }
         failure {
-            // Send failure notification
             echo 'Deployment failed!'
         }
     }
