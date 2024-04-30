@@ -22,7 +22,7 @@ pipeline {
                 script {
                     echo "Deploying Docker image: ${DOCKER_IMAGE}"
                     // Check if the container already exists and stop/remove it
-                    bat "docker ps -a | findstr weather-app-1 && docker stop weather-app-1 && docker rm weather-app-1 || true"
+                    bat "docker ps -a | findstr weather-app-1 && docker stop weather-app-1 && docker rm weather-app-1 || exit /b 0"
                     // Create a new container
                     bat "docker run -d --name weather-app-1 -p 8000:8000 ${DOCKER_IMAGE}"
                 }
