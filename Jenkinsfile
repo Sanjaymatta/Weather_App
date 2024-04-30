@@ -27,7 +27,7 @@ pipeline {
                     // Since you already have the image, you might push it to a registry or deploy it to your server
                     // Example: docker push ${DOCKER_IMAGE} or deploy to a server using SSH, Kubernetes, etc.
                     echo "Deploying Docker image: ${DOCKER_IMAGE}"
-                    bat "docker run -d --name weather-app-2 -p 8000:8000 ${DOCKER_IMAGE}"
+                    bat "docker run -d --name weather-app-2 -p 8000:8001 ${DOCKER_IMAGE}"
                 }
             }
         }
